@@ -42,7 +42,7 @@ clients:
   - type: "m4.xlarge"
     tags: null
     count: 3
-gsManagers: 0
+gsManagers: 3
 name: "GS_CLUSTER"
 ````
  
