@@ -1,17 +1,17 @@
 # gsctl
-A standalone CLI tool for creating, provisioning and installation of GigaSpaces clusters
+A standalone CLI tool for creating, provisioning and installing GigaSpaces clusters
 
 ## Prerequisites
 
 * Java 8
-* .aws/credentials as described in https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html 
-(should contain aws_access_key_id, aws_secret_access_key and region)
+* Amazon AWS account and .aws/credentials as described in the [docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) 
+(should contain `aws_access_key_id`, `aws_secret_access_key` and `region`)
 
 ## Setting Up The Environment
 
-* Into your chosen directory download https://github.com/Gigaspaces/gsctl/raw/15.2.0-m11/gsctl.jar
+* Download https://github.com/Gigaspaces/gsctl/raw/15.2.0-m11/gsctl.jar into your chosen directory
 
-## Creating The GS Cluster
+## Creating The GigaSpaces Cluster
 
 * Run `java -jar gsctl.jar init --cluster-name=<cluster name>` where cluster name is a logical name for your cluster.\
   The command creates provision.yml file that can be edited to supply existing AWS resources (i.e vpc,keyName, securityGroups...).\
@@ -47,7 +47,7 @@ name: "GS_CLUSTER"
 ````
  
 
-* Run `java -jar gsctl.jar create` to provision, install and run the GS cluster.
+* Run `java -jar gsctl.jar create` to provision, install and run the GigaSpaces cluster.
 ````
 yael@yael-pcu:~/nomad-workspace$ java -jar gsctl.jar create
 2020-02-16 15:28:18,077 [main] INFO  com.gigaspaces.aws.AwsUtils -  Successfully created vpc: vpc-0e300ae2639bf2d20
@@ -98,9 +98,9 @@ Done
 
 ````
 
-## Deploying GS Services
+## Deploying GigaSpaces Services
 
-* Run `java -jar gsctl.jar deploy stateful mySpace processor.jar` to deploy built-in space example (from: https://github.com/Gigaspaces/gsctl/tree/master/services)
+* Run `java -jar gsctl.jar deploy stateful mySpace processor.jar` to deploy the built-in space example (from: https://github.com/Gigaspaces/gsctl/tree/master/services)
   
 ````
  yael@yael-pcu:~/nomad-workspace$ java -jar gsctl.jar deploy stateful mySpace processor.jar
@@ -108,7 +108,7 @@ Done
  .....
 ````
 
-* Run `java -jar gsctl.jar deploy stateless myFeeder feeder.jar` to deploy built-in feeder example (from: https://github.com/Gigaspaces/gsctl/tree/master/services)
+* Run `java -jar gsctl.jar deploy stateless myFeeder feeder.jar` to deploy the built-in feeder example (from: https://github.com/Gigaspaces/gsctl/tree/master/services)
   
 ````
  yael@yael-pcu:~/nomad-workspace$ java -jar gsctl.jar deploy stateless myFeeder feeder.jar
@@ -116,24 +116,24 @@ Done
  .....
 ````
 
-* Run `java -jar gsctl.jar service-address manager` to get Ops Manager UI url and brows to see deployed pu's.
+* Run `java -jar gsctl.jar service-address manager` to get Ops Manager UI url and browse to see deployed services.
 
 ````
 yael@yael-pcu:~/nomad-workspace$ java -jar gsctl.jar service-address manager
 http://34.254.196.25:8090
 ````
 
-* Run `java -jar gsctl.jar service-address grafana` to get Grafana UI url to see deployed pu's dashboards.
+* Run `java -jar gsctl.jar service-address grafana` to get Grafana UI url to see deployed services dashboards.
 
 ````
 yael@yael-pcu:~/nomad-workspace$ java -jar gsctl.jar service-address grafana
 http://52.18.157.186:6066
 ```` 
-## Undeploying GS Services
+## Undeploying GigaSpaces Services
 
 * Run `java -jar gsctl.jar undeploy mySpace` to undeploy mySpace service.
 
-## Tearing Down The GS Cluster
+## Tearing Down The GigaSpaces Cluster
 
 * Run 'java -jar gsctl.jar destroy' to take the cluster down and delete all dynamically created resources.
 
