@@ -1,0 +1,30 @@
+<metrics-configuration>
+    <reporters>
+        <!-- Create an InfluxDB reporter -->
+        <reporter name="influxdb">
+            <property name="host" value="influxdb.service.consul"/>
+            <property name="port" value="8086"/>
+            <property name="database" value="telegraf"/>
+        </reporter>
+    </reporters>
+
+    <!-- define which sampling rates can be assigned to a metric -->
+    <samplers>
+        <!-- 'default' is configured to sample (and report) its metrics every 5 seconds -->
+        <sampler name="default" sample-rate="5s"/>
+        <!-- 'high' is configured to sample its metrics every second, and report in batch every 5 seconds -->
+        <sampler name="high" sample-rate="1s" report-rate="5s"/>
+        <!-- 'low' is configured to sample (and report) its metrics every minute -->
+        <sampler name="low" sample-rate="1m"/>
+        <!-- 'off' is configured to never sample (and report) its metrics -->
+        <sampler name="off" sample-rate="0"/>
+    </samplers>
+
+    <metrics>
+        <!-- turn of redundant samplers (covered by telegraf)-->
+        <metric prefix="os" sampler="off"/>
+        <metric prefix="os_memory" sampler="off"/>
+        <metric prefix="os_cpu" sampler="off"/>
+
+    </metrics>
+</metrics-configuration>
