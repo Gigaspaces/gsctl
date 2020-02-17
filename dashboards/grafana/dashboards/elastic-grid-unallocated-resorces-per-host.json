@@ -382,7 +382,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Nomad Unallocated Resources Per Host",
+  "title": "ElasticGrid Unallocated Resources Per Host",
   "uid": "000000273",
   "version": 1
 }

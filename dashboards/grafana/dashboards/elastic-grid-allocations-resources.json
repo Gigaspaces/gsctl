@@ -406,7 +406,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Nomad Allocations Resources",
+  "title": "ElasticGrid Allocations Resources",
   "uid": "000000084",
   "version": 6
 }
