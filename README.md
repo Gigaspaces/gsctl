@@ -1,7 +1,9 @@
 # gsctl
 A standalone CLI tool for creating, provisioning and installing GigaSpaces clusters
 
-[![Watch the video](images/fleeq.png)](https://csm-gigaspaces.fleeq.io/l/jucegzvnxg-9x8bee587p)
+<p align="center">
+    <a href="https://csm-gigaspaces.fleeq.io/l/jucegzvnxg-9x8bee587p"><img src="images/fleeq.png" title="Watch the video" border="1" width="405" height="300"/></a>
+</p>
 
 ## Prerequisites
 
