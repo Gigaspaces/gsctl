@@ -15,7 +15,7 @@ A standalone CLI tool for creating, provisioning and installing GigaSpaces clust
 
 ## Setting Up The Environment
 
-* Download https://github.com/Gigaspaces/gsctl/raw/15.2.0-m11/gsctl.jar into your chosen directory
+* Download https://github.com/Gigaspaces/gsctl/raw/15.2.0-m12/gsctl.jar into your chosen directory
 
 ## Creating The GigaSpaces Cluster
 
